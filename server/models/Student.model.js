@@ -1,6 +1,6 @@
 const mongoose = require ("mongoose");
-const { Schema, Types } = mongoose; 
-const { ObjectId } = Types; 
+const {Schema} = mongoose; 
+
 
 
 const studentSchema = new Schema ({
@@ -13,8 +13,8 @@ const studentSchema = new Schema ({
   program: {type: String, enum: ["Web Dev", "UX/UI", "Data Analytics", "Cybersecurity"]},
   background: {type: String, default:""},
   image: {type: String, default:"https://i.imgur.com/r8bo8u7.png"},
-  cohort: {type: ObjectId, ref:"Cohort"},
-  projects: {type: Array}
+  cohort: {type: mongoose.Schema.Types.ObjectId, ref:"Cohort"},
+  projects: {type: [String]}
 });
 
 const Student = mongoose.model("Student", studentSchema);
