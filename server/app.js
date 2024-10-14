@@ -2,11 +2,11 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const configs = require("./config")
-const helmet = require("helmet") //!
+const helmet = require("helmet") 
 
 configs(app)
 require("./db")
-app.use(    //!
+app.use(    
   helmet({
     contentSecurityPolicy: {
       directives: {

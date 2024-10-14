@@ -40,7 +40,6 @@ router.post("/signup", async (req, res, next)=>{
   } catch (error) {
     next(error)
   }
- res.send("todo ok")
 })
 
 
@@ -91,7 +90,7 @@ router.post("/login", async(req, res, next) => {
 // GET "/api/auth/verify" => Recibe el token y lo valida. Esta ruta es para cuando el usuario vuelve a la app
 router.get("/verify", verifyToken, (req, res) => {
 
-  console.log(req.payload)
+  
   res.status(200).json(req.payload)
 
 })

@@ -2,7 +2,6 @@ const jwt = require("jsonwebtoken")
 
 function verifyToken(req, res, next) {
 
-  console.log(req.headers)
 
   try {
 
